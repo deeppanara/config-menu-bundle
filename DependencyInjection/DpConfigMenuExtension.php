@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Dp\ConfigMenuBundel\DependencyInjection;
+namespace Dp\ConfigMenuBundle\DependencyInjection;
 
 use Snc\RedisBundle\DependencyInjection\Configuration\Configuration;
 use Snc\RedisBundle\DependencyInjection\Configuration\RedisDsn;
