@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Dp\ConfigMenuBundel;
+namespace Dp\ConfigMenuBundle;
 
 use Snc\RedisBundle\DependencyInjection\Compiler\LoggingPass;
 use Snc\RedisBundle\DependencyInjection\Compiler\MonologPass;
