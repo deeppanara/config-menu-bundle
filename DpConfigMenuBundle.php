@@ -11,9 +11,8 @@
 
 namespace Dp\ConfigMenuBundle;
 
-use Snc\RedisBundle\DependencyInjection\Compiler\LoggingPass;
-use Snc\RedisBundle\DependencyInjection\Compiler\MonologPass;
-use Snc\RedisBundle\DependencyInjection\Compiler\SwiftMailerPass;
+use Dp\ConfigMenuBundle\DependencyInjection\DpConfigMenuExtension;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -27,6 +26,6 @@ class DpConfigMenuBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
-        parent::build($container);
+
     }
 }

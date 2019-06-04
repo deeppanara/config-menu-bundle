@@ -11,17 +11,12 @@
 
 namespace Dp\ConfigMenuBundle\DependencyInjection;
 
-use Snc\RedisBundle\DependencyInjection\Configuration\Configuration;
-use Snc\RedisBundle\DependencyInjection\Configuration\RedisDsn;
-use Snc\RedisBundle\DependencyInjection\Configuration\RedisDsnInterface;
-use Snc\RedisBundle\DependencyInjection\Configuration\RedisEnvDsn;
+
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * SncRedisExtension
@@ -38,6 +33,16 @@ class DpConfigMenuExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+
+        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__).'/Resources/config'));
+        $loader->load('dp_config_menu.yaml');
+
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+
+        return $config;
+
     }
 
 }

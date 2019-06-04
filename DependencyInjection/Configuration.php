@@ -11,7 +11,7 @@
 
 namespace Dp\ConfigMenuBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -22,24 +22,18 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    private $debug;
-
-    public function __construct($debug)
-    {
-        $this->debug = (Boolean) $debug;
-    }
-
-    /**
-     * Generates the configuration tree builder.
-     *
-     * @return TreeBuilder The tree builder
-     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('config_menu_bundle');
+        $treeBuilder
+            ->root('dp_config_menu')
+                ->children()
+                ->variableNode('menu')
+                ->end()
+            ->end()
+        ;
+
         return $treeBuilder;
     }
-
    
 }
