@@ -12,11 +12,13 @@
 namespace Dp\ConfigMenuBundle\DependencyInjection;
 
 
+use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
 
 /**
  * SncRedisExtension
@@ -34,15 +36,18 @@ class DpConfigMenuExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
 
-        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__).'/Resources/config'));
-        $loader->load('dp_config_menu.yaml');
-
+        $processor = new Processor();
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config = $processor->processConfiguration($configuration, $configs);
+
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('services.yaml');
 
 
-        return $config;
-
+        // Last argument of this service is always the menu configuration
+        $container
+            ->getDefinition('dp_menu.config.provider')
+            ->addArgument($configs);
     }
 
 }

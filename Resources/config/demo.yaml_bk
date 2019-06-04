@@ -1,0 +1,49 @@
+dp_config_menu:
+    menu:
+        side_bar_menu:
+            label: lable_sdlable 11111
+            children:
+                -
+                    label: "My first label"
+                    url: "An uri. Use it if you do not define route parameter"
+                    route: "A sf2 route without @"
+                    route_parameters: "an array of parameters to pass to the route"
+                    display: "boolean to hide the item"
+                    roles: "array of item (string roles) passed to isGranted securityContext method to"
+                    class: "custom class"
+                    id: "custom id"
+                    icon: "custom icon"
+                    children:
+                        -   label: "My first label 30"
+                            route: rl122
+                            attr: atte122
+                            children:
+                                -   label: "My first label 30"
+                                    route: rl122
+                                    attr: atte122
+                        -   label: "My first label 31"
+                            route: rl12323
+                            attr: atte1233
+                        -   label: "My first label 32"
+                            route: rl12323
+                            attr: atte1233
+                -
+                    label: "My second label"
+                    url: "An uri. Use it if you do not define route parameter"
+                    route: "A sf2 route without @"
+                    route_parameters: "an array of parameters to pass to the route"
+                    display: "boolean to hide the item"
+                    roles: "array of item (string roles) passed to isGranted securityContext method to"
+                    class: "custom class"
+                    id: "custom id"
+                    icon: "custom icon"
+                    children:
+                        -   label: "My sda label 30"
+                            route: rl122
+                            attr: atte122
+                        -   label: "My firasdstasd asdlabel 31"
+                            route: rl12323
+                            attr: atte1233
+                        -   label: "My first asdasd 32"
+                            route: rl12323
+                            attr: atte1233

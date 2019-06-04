@@ -1,0 +1,14 @@
+parameters:
+    dp_menu.config.provider.class: Dp\ConfigMenuBundle\Provider\ConfigurationProvider
+    dp_menu.menu.provider.class: Dp\ConfigMenuBundle\Provider\MenuProvider
+
+services:
+    dp_menu.config.provider:
+        class: '%dp_menu.config.provider.class%'
+        public: true
+
+    dp_menu.menu.provider:
+        class: '%dp_menu.menu.provider.class%'
+        public: true
+        arguments:
+          ['@service_container']
