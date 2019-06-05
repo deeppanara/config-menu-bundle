@@ -1,11 +1,13 @@
 {
-    "name": "dp/config-menu-bundle",
+    "name": "Dp/config-menu-bundle",
     "type": "symfony-bundle",
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
         "symfony/yaml": "^2.7 || ^3.0 || ^4.0",
-        "knplabs/knp-menu": "*"
+        "knplabs/knp-menu": "*",
+        "twig/extensions": "*"
+
     },
     "require-dev": {
         "doctrine/cache": "1.*",
