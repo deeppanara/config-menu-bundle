@@ -48,6 +48,7 @@ class DpMenuExtension extends AbstractExtension
     public function dpMenuRender($name)
     {
         $provider = $this->container->get('dp_menu.menu.provider');
+
         return $provider->getMenu($name);
     }
 }

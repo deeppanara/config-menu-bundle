@@ -47,7 +47,7 @@ class MenuProvider
     public function getMenu(string $name)
     {
         $menu = new MenuTreeBuilder($this->configuration['menu'][$name], $this->container);
-        $menu->createMenu($name);
+        return $menu->createMenu($name);
     }
 
 }
